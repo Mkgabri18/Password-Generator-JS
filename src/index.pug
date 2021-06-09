@@ -1,0 +1,15 @@
+.container
+  h2.title Password generator
+  .generated-pass
+    input.generated-result(readonly)
+    button.clipBoard(onclick="copyToClipboard()") copy
+  .setting
+    fieldset
+      label(for="numbers") Numeros
+      input#numbers(type="checkbox")
+      span.checksquare(onclick="checkOnClick(event)")
+    fieldset
+      label(for="symbols") Simbulos
+      input#symbols(type="checkbox")
+      span.checksquare(onclick="checkOnClick(event)")
+  button.generated-button(onclick="generateCode()") Genera password

@@ -1,0 +1,119 @@
+$bg-gradient1: rgba(131, 58, 180, 1);
+$bg-gradient2: rgba(252, 176, 69, 1);
+$bg-black: #000;
+$t-white: #fff;
+$bg-button: #db5c5c;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, $bg-gradient1 0%, $bg-gradient2 100%);
+}
+
+fieldset {
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: $t-white;
+  & input {
+    display: none;
+  }
+  & label:hover ~ .checksquare {
+    background: #ccc;
+  }
+  & input:checked ~ .checksquare {
+    background: #2196f3;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 7px;
+      top: 2px;
+      left: 5px;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.checksquare {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  position: relative;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-left: 10px;
+  background-color: #eee;
+}
+
+.container {
+  background: lightblue;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background-color: rgba($bg-black, 0.5);
+  border-radius: 15px;
+}
+
+.title {
+  text-align: center;
+  color: $t-white;
+}
+
+.generated {
+  &-pass {
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    margin-bottom: 1em;
+  }
+  &-result {
+    background: white;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    margin-right: 5px;
+  }
+  &-button {
+    width: 60%;
+    margin: auto;
+    background: $bg-button;
+    border: none;
+    border-radius: 10px;
+    padding: 1em;
+    color: $t-white;
+  }
+}
+
+.setting {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0.5em;
+}
+
+.clipBoard {
+  background: $bg-button;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4em;
+  color: white;
+}

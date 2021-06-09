@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #833ab4 0%, #fcb045 100%);
+}
+
+fieldset {
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+fieldset input {
+  display: none;
+}
+fieldset label:hover ~ .checksquare {
+  background: #ccc;
+}
+fieldset input:checked ~ .checksquare {
+  background: #2196f3;
+}
+fieldset input:checked ~ .checksquare::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 7px;
+  top: 2px;
+  left: 5px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.checksquare {
+  position: relative;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-left: 10px;
+  background-color: #eee;
+}
+
+.container {
+  background: lightblue;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+}
+
+.generated-pass {
+  display: flex;
+  align-content: stretch;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+.generated-result {
+  background: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  margin-right: 5px;
+}
+.generated-button {
+  width: 60%;
+  margin: auto;
+  background: #db5c5c;
+  border: none;
+  border-radius: 10px;
+  padding: 1em;
+  color: #fff;
+}
+
+.setting {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0.5em;
+}
+
+.clipBoard {
+  background: #db5c5c;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4em;
+  color: white;
+}
